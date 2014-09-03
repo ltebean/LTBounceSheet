@@ -29,15 +29,15 @@
     
     self.sheet = [[LTBounceSheet alloc]initWithHeight:250 bgColor:color];
     
-    UIButton * option1 = [self productButtonWithTitle:@"take photo"];
+    UIButton * option1 = [self produceButtonWithTitle:@"take photo"];
     option1.frame=CGRectMake(15, 30, 290, 46);
     [self.sheet addView:option1];
     
-    UIButton * option2 = [self productButtonWithTitle:@"choose existing photo"];
+    UIButton * option2 = [self produceButtonWithTitle:@"choose existing photo"];
     option2.frame=CGRectMake(15, 90, 290, 46);
     [self.sheet addView:option2];
     
-    UIButton * cancel = [self productButtonWithTitle:@"cancel"];
+    UIButton * cancel = [self produceButtonWithTitle:@"cancel"];
     cancel.frame=CGRectMake(15, 170, 290, 46);
     [self.sheet addView:cancel];
 
@@ -47,7 +47,7 @@
 }
 
 
--(UIButton *) productButtonWithTitle:(NSString*) title
+-(UIButton *) produceButtonWithTitle:(NSString*) title
 {
     UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor= [UIColor whiteColor];

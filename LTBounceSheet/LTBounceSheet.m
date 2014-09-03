@@ -63,7 +63,6 @@
 
 -(void) addView:(UIView *)view
 {
-    NSLog(@"My view frame: %@", NSStringFromCGRect(view.frame));
     [self.contentView addSubview:view];
 }
 

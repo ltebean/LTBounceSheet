@@ -18,8 +18,6 @@ UIButton * cancel = [self produceButtonWithTitle:@"cancel"];
 cancel.frame=CGRectMake(15, 170, 290, 46);
 [self.sheet addView:cancel];
 
-[self.view addSubview:self.sheet];
-
 
 //toggle the sheet
 [self.sheet toggle];

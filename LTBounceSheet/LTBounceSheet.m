@@ -68,9 +68,6 @@
 
 -(void) toggle
 {
-    if(self.counter!=0){
-        return;
-    }
     if(self.shown){
         [self hide];
     }else{
@@ -78,8 +75,14 @@
     }
 }
 
+
+
 -(void) show
 {
+    if(self.counter!=0){
+        return;
+    }
+    [[[UIApplication sharedApplication] keyWindow] addSubview:self];
     self.shown=YES;
     [self start];
     [self animateSideHelperViewToPoint:CGPointMake(self.sideHelperView.center.x, 0)];
@@ -90,6 +93,9 @@
 
 -(void) hide
 {
+    if(self.counter!=0){
+        return;
+    }
     self.shown=NO;
     [self start];
     CGFloat height = CGRectGetHeight(self.bounds);
@@ -157,7 +163,9 @@
     if(self.counter==0){
         [self.displayLink invalidate];
         self.displayLink = nil;
-        
+        if(!self.shown){
+            [self removeFromSuperview];
+        }
     }
 }
 - (void)drawRect:(CGRect)rect

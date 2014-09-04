@@ -11,6 +11,8 @@
 @interface LTBounceSheet : UIView
 - (id) initWithHeight:(CGFloat) height bgColor:(UIColor*) color;
 -(void) addView:(UIView*) view;
+-(void) show;
+-(void) hide;
 -(void) toggle;
 
 @end

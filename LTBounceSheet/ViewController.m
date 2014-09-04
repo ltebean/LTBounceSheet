@@ -13,6 +13,7 @@
 
 @interface ViewController ()
 @property(nonatomic,strong) LTBounceSheet *sheet;
+@property(nonatomic) BOOL shown;
 @end
 
 @implementation ViewController
@@ -41,9 +42,7 @@
     cancel.frame=CGRectMake(15, 170, 290, 46);
     [self.sheet addView:cancel];
 
-    
-    [self.view addSubview:self.sheet];
-    
+    [[[UIApplication sharedApplication] keyWindow] addSubview:self.sheet];    
 }
 
 
